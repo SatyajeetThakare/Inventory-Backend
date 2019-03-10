@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS `testing`.`dealerType`;
+CREATE TABLE `testing`.`dealerType` (
+  `dealerTypeId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  `description` varchar(25) NULL,
+  `reason` varchar(100) NULL,
+  `active` tinyint NOT NULL default 1,
+  `createdBy` int(11) NOT NULL default 1,
+  `createdOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedBy` int(11) DEFAULT NULL,
+  `updatedOn` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`dealerTypeId`),
+  UNIQUE KEY `dealerTypeName_UNIQUE` (`name`)
+);
+
+insert into dealerType
+(name)
+values
+('Dealer');
+
+insert into dealerType
+(name)
+values
+('Organization');
+
+insert into dealerType
+(name)
+values
+('Customer');
